@@ -13,7 +13,7 @@ public:
             int complement = target - nums[i];
 
             if (num_map.find(complement) != num_map.end()) {
-                return {num_map[complement, i]};
+                return {num_map[complement], i};
             }
             num_map[nums[i]] = i;
         }
@@ -28,7 +28,7 @@ int main() {
     int target = 10;
 
     vector<int> result = sol.twoSum(nums, target);
-    cout << '[]' << result[0] << ', ' << result[1] << ']' << endl;
+    cout << "[" << result[0] << ", " << result[1] << "]" << endl;
 
     return 0;
 }
